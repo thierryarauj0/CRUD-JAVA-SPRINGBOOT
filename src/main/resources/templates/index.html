@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <br>
+        <div class="row">
+            <div class="col-sm-3 py-2"></div>
+           <div class="col-sm-5 py2"></div>
+           <h2>Login</h2>
+           <div class="card bg-info text-white h-200">
+            <form method="post" action="efetuarLogin" th:object="${usuario}">
+                <input name="login" class="form-control" placeholder="Usuario" />
+                <input type="password" name="senha" class="form-control" placeholder="senha">
+                
+                <button class="btn btn-primary btn-block">Entrar</button>
+                
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>

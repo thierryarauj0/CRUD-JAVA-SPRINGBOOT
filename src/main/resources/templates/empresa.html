@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+  <head>
+   <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+   <meta http-equiv="refresh" content=1;url="localhost:8080/empresa">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Loja Empresas</title>
+  </head>
+  <style>
+   body {
+    -webkit-animation: colorchange 60s infinite; 
+    animation: colorchange 60s infinite;
+}
+@-webkit-keyframes colorchange {
+     0%  {background: 
+#24242c;}
+    25%  {background: 
+#24242c;}
+    50%  {background: #24242c;}
+    75%  {background: #24242c;}
+    100% {background: #24242c;}
+}
+@keyframes colorchange {
+     0%  {background: #24242c;}
+    25%  {background: #24242c;}
+    50%  {background: #24242c;}
+    75%  {background: #24242c;}
+    100% {background: #24242c;}
+}   
+  </style>
+  <body>
+   <style>
+      .container {
+        height: 300px;
+        overflow-y: scroll;
+      }
+    </style>
+   <div class="p-3 mb-2 bg-dark text-white">
+    <h1> <div style="text-align:center">Empresas</div> </h1>
+          
+
+        
+    <a href="cadastroEmpresa">  <button class="btn btn-primary"> Nova Empresa</button></a>
+    <a href="produto"> <button class="btn btn-primary">Produtos</button></a>
+    <a href="clientePessoaFisica"> <button class="btn btn-primary">Cliente Fisico</button></a>
+    <a href="clientePessoaJuridica"> <button class="btn btn-primary">Cliente Juridico</button></a>
+    
+    
+
+    <table class="table table-dark" border ="1">
+       <tr>
+          <td>Código Empresa</td>
+          <td>Empresa</td>
+          <td>Responsável</td>
+          <td>CNPJ</td>
+          
+          <td>Opçoes</td>
+          
+       </tr>
+       <tr th:each="emp : ${listaEmpresas} " >
+          <td th:text="${emp.id}"></td>
+          <td th:text="${emp.nome}"></td>
+          <td th:text="${emp.responsavel}"></td>
+          <td th:text="${emp.cnpj}"></td> 
+          
+          <td>
+             <a th:href="@{/form/{id}(id=${emp.id})}"><button class="btn btn-warning">Alterar</button></a>
+            <a th:href="@{/deletarEmpresa/{id}(id=${emp.id})}"><button class="btn btn-danger">Deletar</button></a>
+            
+          </td>
+
+
+          
+       </tr>
+   
+  </body>
+</style>
+</div>
+</html>
+</div>

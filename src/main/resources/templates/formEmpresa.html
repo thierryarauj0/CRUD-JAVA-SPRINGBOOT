@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+
+<head>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+	<meta http-equiv="refresh" content=1;url="localhost:8080/empresa">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sistema de Gestão de Frutas</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</style>
+</head>
+<style>
+	body {
+	 -webkit-animation: colorchange 60s infinite; 
+	 animation: colorchange 60s infinite;
+ }
+ @-webkit-keyframes colorchange {
+	  0%  {background: 
+ #24242c;}
+	 25%  {background: 
+ #24242c;}
+	 50%  {background: #24242c;}
+	 75%  {background: #24242c;}
+	 100% {background: #24242c;}
+ }
+ @keyframes colorchange {
+	  0%  {background: #24242c;}
+	 25%  {background: #24242c;}
+	 50%  {background: #24242c;}
+	 75%  {background: #24242c;}
+	 100% {background: #24242c;}
+ }   
+   </style>
+<body>
+	<div class="p-3 mb-2 bg-dark text-white">
+	
+		<h1> <div style="text-align:center">Formulario de Cadastro de Empresas</div> </h1>
+	<form action="#" class="form form-control" th:action="@{/salvarEmpresa}" method="post" th:object="${empresa}">
+		<fieldset>
+			<h6></h6>
+			<div th:fragment="form"><legend>Dados da Empresa</legend>
+				<label class="col-sm-2 col-form-label">Nome Fantasia da Empresa</label>
+				<input type="text" th:field="*{nome}" />
+				
+				<label  class="col-sm-2 col-form-label">Responsavel</label>
+				<input type="text"  th:field="*{responsavel}" />
+				
+				<label  class="col-sm-2 col-form-label">Representante</label>
+				<input type="text"  th:field="*{representante}" />
+				
+				<label  class="col-sm-2 col-form-label">CNPJ</label>
+				<input type="text" th:field="*{cnpj}" />
+				
+				<label  class="col-sm-2 col-form-label">Telefone</label>
+				<input type="text" th:field="*{telefone}" />
+				
+				<label class="col-sm-2 col-form-label">Email</label>
+				<input type="text" th:field="*{email}" />
+				
+				<label for="cep" class="col-sm-2 col-form-label">CEP</label>
+				<input type="text"  th:field="*{cep}" />
+				
+				<label class="col-sm-2 col-form-label">Logradouro</label>
+				<input type="text"  th:field="*{logradouro}" />
+				
+				<label class="col-sm-2 col-form-label">Número</label>
+				<input type="text"  th:field="*{numeroEndereco}" />
+				
+				<label class="col-sm-2 col-form-label">Bairro</label>
+				<input type="text"  th:field="*{bairro}" />
+				
+				<label class="col-sm-2 col-form-label">Cidade</label>
+				<input type="text" th:field="*{cidade}" />
+				
+				<label class="col-sm-2 col-form-label">UF</label>
+				<input type="text" th:field="*{uf}" />
+				
+				<button type="submit" class="btn btn-success">Cadastrar</button></div>
+			  
+			</h6>
+		</fieldset>
+	</div>
+	</form>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+		crossorigin="anonymous"></script>
+	</div>
+</body>
+
+</html>

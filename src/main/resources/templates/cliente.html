@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+  <head>
+   <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+   <meta http-equiv="refresh" content=1;url="localhost:8080/empresa">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Clientes</title>
+  </head>
+  <style>
+   body {
+    -webkit-animation: colorchange 60s infinite; 
+    animation: colorchange 60s infinite;
+}
+@-webkit-keyframes colorchange {
+     0%  {background: 
+#24242c;}
+    25%  {background: 
+#24242c;}
+    50%  {background: #24242c;}
+    75%  {background: #24242c;}
+    100% {background: #24242c;}
+}
+@keyframes colorchange {
+     0%  {background: #24242c;}
+    25%  {background: #24242c;}
+    50%  {background: #24242c;}
+    75%  {background: #24242c;}
+    100% {background: #24242c;}
+}   
+  </style>
+  <body>
+   <style>
+      .container {
+        height: 300px;
+        overflow-y: scroll;
+      }
+    </style>
+   <div class="p-3 mb-2 bg-dark text-white">
+    <h1> <div style="text-align:center">clientes fisicos</div> </h1>
+    <div class="p-3 mb-2 bg-dark text-white">
+    
+      <a href="cadastroClienteFisico">  <button class="btn btn-primary"> Novo Cliente</button></a>
+      <a href="empresa">  <button class="btn btn-primary">Voltar Para Pagina Principal</button></a>
+    </div>
+    <table class="table table-dark" border ="1">
+       <tr>
+          <td>Código Cliente</td>
+          <td>rg</td>
+          <td>data de nascimento</td>
+          <td>cpf</td>
+          <td>Opções</td>
+       </tr>
+       <tr th:each="cli : ${listaClientes}">
+          <td th:text="${cli.id}"></td>
+          <td th:text="${cli.rg}"></td>
+          <td th:text="${#dates.format(cli.data_de_nascimento,'dd/MM/yyyy')}"></td>
+          <td th:text="${cli.cpf}"></td>
+          <td>
+            
+           <a th:href="@{/deletarClienteFisico/{id}(id=${cli.id})}"><button class="btn btn-danger">Deletar</button></a>
+           
+         </td>
+       </tr>
+    </table>
+  </body>
+</html>
