@@ -6,6 +6,7 @@
    <meta http-equiv="refresh" content=1;url="localhost:8080/empresa">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <title>Loja Empresas</title>
   </head>
   <style>
@@ -39,15 +40,22 @@
     </style>
    <div class="p-3 mb-2 bg-dark text-white">
     <h1> <div style="text-align:center">Empresas</div> </h1>
-          <ul class="nav navbar-right">
-            <li>
+         
+            <h3>Nome do Usuario:</h3>
+    <ul class="center">
+      
+            <li >
             <form method="post" action="/logout">
-               <button type="submit">
+               <button class="btn btn-primary  "type="submit">
+                  <span th:text="${session.usuarioLogado.nome}"></span>
+                  <div>______________</div>
                   <span class="glyphicon glyphicon-log-out"></span> Sair
                </button>
+               
             </form>
          </li>
          </ul>
+         
 
         
     <a href="cadastroEmpresa">  <button class="btn btn-primary"> Nova Empresa</button></a>
