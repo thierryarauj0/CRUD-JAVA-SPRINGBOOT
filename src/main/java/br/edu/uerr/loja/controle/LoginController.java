@@ -16,7 +16,7 @@ public class LoginController{
     }
 
     @PostMapping ("efetuarLogin")
-    public String efetuarLogin(Usuario usuario, HttpSession session){
+    public String efetuarLogin(Usuario usuario, HttpSession session ){
         if (usuario.getLogin().equals("admin") &&
             usuario.getSenha().equals("1234"))  {
             usuario.setNome("Administrador");
@@ -25,7 +25,22 @@ public class LoginController{
             } else {
                 return"redirect:/";
             }
-        }}
+
+   
+
+
+
+        }
+        @PostMapping("/logout")
+        public String logout(HttpSession session){
+    
+            session.invalidate();
+            return "redirect:/";
+    
+        }
+    
+    
+    }
     
         
 
