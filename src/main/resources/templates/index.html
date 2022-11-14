@@ -70,7 +70,14 @@ transform: scale(1.1) ;
 opacity: 0.5;
 }
 
+.null{
 
+    text-align: center;
+    color: rgb(255, 0, 0);
+    text-shadow: 2px 2px 0px black;
+    font-size: 25px;
+    
+}
 
     </style>
     <title>LOGIN</title>
@@ -83,7 +90,9 @@ opacity: 0.5;
             <div class="col-sm-3 py-2"></div>
            <div class="col-sm-5 py2"></div>
            <h1 class ="title">Login</h1>
+           <div class="null" th:text="${mensagem}" th:if="${mensagem !=null}"></div>
            <div class="card bg-info text-white h-200">
+            
             <form method="post" action="efetuarLogin" th:object="${usuario}">
                 <input name="login" class="form" placeholder="Usuario:" />
                 <input type="password" name="senha" class="form" placeholder="Senha:">
