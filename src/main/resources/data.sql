@@ -56,3 +56,7 @@ insert into produto (empresa_id, fornecedor_id, nome, unidade, quantidade, preco
 (3,3,'Feijão Sabor Novo','Kg',1000,7.15),
 (3,3,'Macarrão Sabor Novo','Kg',1000,2.15),
 (3,3,'Açucar Sabor Novo','Kg',1000,6.15);
+
+insert into usuario (id , empresa_id , nivel_acesso_id , nome , conta , login , senha , telefone , email , rg , cpf , data_nascimento)values
+(1,1,1,Thierry,'69305483','thierryaraujo06','Patitico','95991432677','thieryaraujo05@gmail.com','57684123','03250089222','1998-13-13');
+
