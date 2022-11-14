@@ -30,4 +30,4 @@ import javax.persistence.Table;
         }
         public void setNome(String nome) {
             this.nome = nome;
-        }
+        }}}
