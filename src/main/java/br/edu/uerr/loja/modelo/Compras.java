@@ -9,27 +9,33 @@
     import javax.persistence.Id;
     import javax.persistence.Table;
 
+    public class Compras {
     @Entity
-    @Table(name="vendas")
-    public class Vendas implements Serializable {
+    @Table(name="compras")
+    public class compras implements Serializable {
     private static final long serialVersionUID = 1L;
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
 
         private Integer id;
+    private Integer cliente_id;
         private Integer produtos_id;
         private Integer quantidade;
         private DecimalFormat valor_unitario;
         private Integer forma_pagamento;
         private Integer data_venda;
-    
-    
-    
+
         public Integer getId() {
             return id;
         }
         public void setId(Integer id) {
             this.id = id;
+        }
+        public Integer getCliente_id() {
+            return cliente_id;
+        }
+        public void setCliente_id(Integer cliente_id) {
+            this.cliente_id = cliente_id;
         }
         public Integer getProdutos_id() {
             return produtos_id;
@@ -61,5 +67,4 @@
         public void setData_venda(Integer data_venda) {
             this.data_venda = data_venda;
         }
-
-    }
+    }}
