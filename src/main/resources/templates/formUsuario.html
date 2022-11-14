@@ -1,0 +1,98 @@
+        <!doctype html>
+        <html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>Sistema de Gestão de Frutas</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+                integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        </head>
+        <style>
+            body {
+            -webkit-animation: colorchange 60s infinite; 
+            animation: colorchange 60s infinite;
+        }
+        @-webkit-keyframes colorchange {
+            0%  {background: 
+        #24242c;}
+            25%  {background: 
+        #24242c;}
+            50%  {background: #24242c;}
+            75%  {background: #24242c;}
+            100% {background: #24242c;}
+        }
+        @keyframes colorchange {
+            0%  {background: #24242c;}
+            25%  {background: #24242c;}
+            50%  {background: #24242c;}
+            75%  {background: #24242c;}
+            100% {background: #24242c;}
+        } 
+        
+        .input{ 
+
+            box-sizing: border-box;
+   display: block;
+
+}
+
+.text{
+    text-align: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    color: black;
+    padding-left: 240px;
+padding-right: 240px;
+margin-bottom: 30px;
+margin-left: 200px;
+}
+        </style>
+        <body>
+            <div class="p-3 mb-2 bg-dark text-white">
+            <h1>Formulário de Cadastro de Usuarios</h1>
+            <form action="#" class="form form-control" th:action="@{/salvarUsuario}" method="post" th:object="${usuario}">
+                <fieldset>
+                    <div class="text" th:fragment="form"><legend>Dados:</legend>
+
+                    <label  class="col-sm-1 col-form-label">Nome:</label>
+                    <input class="input"ctype="text" th:field="*{nome}" th:required="required" />
+
+                    <label  class="col-sm-1 col-form-label">Nivel:</label>
+                    <input class="input"ctype="text" th:field="*{nivel_de_acesso_id}" th:required="required" />
+                    
+                    <label  class="col-sm-1 col-form-label">Login:</label>
+                    <input class="input"ctype="text" th:field="*{login}" th:required="required" />
+
+                    <label  class="col-sm-1 col-form-label">Senha:</label>
+                    <input class="input"ctype="text" th:field="*{senha}" th:required="required" />
+                    
+                    <label  class="col-sm-1 col-form-label">cpf:</label>
+                    <input class="input"ctype="text" th:field="*{cpf}" th:required="required" />
+                    
+                    <label class="col-sm-1 col-form-label">rg:</label>
+                    <input class="input"ctype="text" th:field="*{rg}" th:required="required" />
+                    
+                    <label class="col-sm-1 col-form-label">telefone:</label>
+                    <input class="input"ctype="text" th:field="*{telefone}" th:required="required" />
+
+                    <label class="col-sm-1 col-form-label">email:</label>
+                    <input class="input"ctype="text" th:field="*{email}" th:required="required" />
+
+                    <label class="col-sm-1 col-form-label">data de nascimento:</label>
+                    <input class="input"ctype="text" th:field="*{data_nascimento}" th:required="required" />
+
+                    
+                    
+                    <button class="btn btn-primary" type="submit">Cadastrar</button>    
+                </fieldset>
+            </form>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+                crossorigin="anonymous"></script>
+            </div>
+        </body>
+
+        </html>

@@ -24,14 +24,22 @@ import javax.persistence.Table;
    @Column (length = 50)
    private String senha;
    private String nome;
-   private long empresa_id;
-   private long nivel_de_acesso_id;
+   @Column(name="empresa_id")
+   private long empresaId;
+   public long getEmpresaId() {
+    return empresaId;
+}
+public void setEmpresaId(long empresaId) {
+    this.empresaId = empresaId;
+}
+private long nivel_de_acesso_id;
    private String conta;
    private String telefone;
    private String email;
    private String rg;
    private String cpf;
    private String data_nascimento;
+   
 
 
 public long getId() {
@@ -59,10 +67,10 @@ public void setNome(String nome) {
     this.nome = nome;
 }
 public long getEmpresa_id() {
-    return empresa_id;
+    return empresaId;
 }
-public void setEmpresa_id(long empresa_id) {
-    this.empresa_id = empresa_id;
+public void setEmpresa_id(long empresaId) {
+    this.empresaId = empresaId;
 }
 public long getNivel_de_acesso_id() {
     return nivel_de_acesso_id;
@@ -105,5 +113,8 @@ public String getData_nascimento() {
 }
 public void setData_nascimento(String data_nascimento) {
     this.data_nascimento = data_nascimento;
+}
+public Object findAll() {
+    return null;
 }
     }

@@ -38,7 +38,23 @@
       }
     </style>
    <div class="p-3 mb-2 bg-dark text-white">
+    <ul class="center">
+      
+      <li >
+         
+      <form method="post" action="/logout">
+         <button class="btn btn-primary  "type="submit">
+            <span th:text="${session.usuarioLogado.nome}"></span>
+           
+            <span class="	glyphicon glyphicon-log-out"></span> Sair
+         </button>
+         
+      </form>
+   </li>
+   </ul>
+   
     <h1> <div style="text-align:center">clientes fisicos</div> </h1>
+    
     <div class="p-3 mb-2 bg-dark text-white">
     
       <a href="cadastroClienteFisico">  <button class="btn btn-primary"> Novo Cliente</button></a>
