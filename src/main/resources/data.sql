@@ -58,5 +58,5 @@ insert into produto (empresa_id, fornecedor_id, nome, unidade, quantidade, preco
 (3,3,'Açucar Sabor Novo','Kg',1000,6.15);
 
 insert into usuario (id , login, senha , nome , empresa_id , nivel_de_acesso_id , conta , telefone , email , rg , cpf , data_nascimento)values
-(1,'Thierry','patitico','thierry',1,1,'thierry','95991432677','thierryaraujo08@gmail.com','31241251412','03250089222','07012003');
-
+(1,'Thierry','patitico','thierry',1,1,'thierry','95991432677','thierryaraujo08@gmail.com','31241251412','03250089222','07012003'),
+(2,'admin','admin','admin',2,2,'admin','admin','admin@gmail.com','admin','admin','admin');
