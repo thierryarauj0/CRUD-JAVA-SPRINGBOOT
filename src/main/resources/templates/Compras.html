@@ -55,8 +55,6 @@
     <table class="table table-dark" border ="1">
        <tr>
           <td>Código Produto</td>
-          <td>Empresa</td>
-          <td>Fornecedor</td>
           <td>Nome do Produto</td>
           <td>unidade de medida</td>
           <td>quantidade</td>
@@ -66,8 +64,6 @@
        
        <tr th:each="emp : ${listaProdutosComprados}">
           <td th:text="${emp.id}"></td>
-          <td th:text="${emp.empresaId}"></td>   <!-- Nao consegui botar como Nome entao coloquei apenas o ID da empresa/produto-->
-          <td th:text="${emp.fornecedorId}"></td> 
           <td th:text="${emp.nome}"></td>
           <td th:text="${emp.unidade}"></td>
           <td th:text="${emp.quantidade}"></td>

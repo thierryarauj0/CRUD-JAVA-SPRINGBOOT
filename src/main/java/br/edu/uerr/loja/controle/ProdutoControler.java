@@ -99,7 +99,7 @@ public class ProdutoControler {
 @GetMapping("/produtosComprados")
 public String produtoComprados(Model model) {
 		
-	model.addAttribute("listaProdutosComprados", produtoRepositorio.findAll());	
+	model.addAttribute("listaProdutosComprados", produtosCompradosRepositorio.findAll());	
 	return "Compras";
 }
 
@@ -108,11 +108,11 @@ public String produtoComprados(Model model) {
 		
 		Produto produto = produtoRepositorio.findById(id)
 				.orElseThrow(()->new IllegalArgumentException("este produto nao existe "+id));
-		produtoRepositorio.save(produto);
+		produtosCompradosRepositorio.save(produto);
 				
 		modelo.addAttribute("listaProdutosComprados", produtosCompradosRepositorio.findAll());
-		modelo.addAttribute("listaProdutos", produtoRepositorio.findAll());
-		return "redirect:/Compras";
+
+		return "redirect:/produtosComprados";
 }
 
 
