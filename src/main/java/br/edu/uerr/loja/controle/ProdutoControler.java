@@ -1,11 +1,13 @@
 package br.edu.uerr.loja.controle;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -50,7 +52,7 @@ public class ProdutoControler {
 	//Salvar/Alterar
 	
 	@PostMapping("/salvarFornecedor")
-	public String salvar(@ModelAttribute("fornecedor")Empresa empresa , Model modelo,
+	public String salvar(@ModelAttribute("fornecedor" )Empresa empresa , Model modelo,
 		@RequestParam Integer empresaId,
 		@RequestParam String nome,
 		@RequestParam Integer fornecedorId,
@@ -79,20 +81,7 @@ public class ProdutoControler {
 	}
 	//Deletar
 
-	@GetMapping("/deletarProdutos/{id}")
-	public String delProduto(@PathVariable("id") Integer id, Model modelo) {
-		
-		Produto produto = produtoRepositorio.findById(id)
-				.orElseThrow(()->new IllegalArgumentException("este produto nao existe "+id));
-		produtoRepositorio.delete(produto);
-				
-		modelo.addAttribute("listaFornecedor", fornecedorRepositorio.findAll());
-		modelo.addAttribute("listaEmpresas", empresaRepositorio.findAll());
-		return "redirect:/empresa";
 
-	}
-
- 
 
 
 

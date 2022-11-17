@@ -54,13 +54,9 @@ margin-left: 200px;
             <h1>Formulário de Cadastro de Usuarios</h1>
             <form action="#" class="form form-control" th:action="@{/salvarUsuario}" method="post" th:object="${usuario}">
                 <fieldset>
-                    <div class="text" th:fragment="form"><legend>Dados:</legend>
-
+                    
                     <label  class="col-sm-1 col-form-label">Nome:</label>
                     <input class="input"ctype="text" th:field="*{nome}" th:required="required" />
-
-                    <label  class="col-sm-1 col-form-label">Nivel:</label>
-                    <input class="input"ctype="text" th:field="*{nivel_de_acesso_id}" th:required="required" />
                     
                     <label  class="col-sm-1 col-form-label">Login:</label>
                     <input class="input"ctype="text" th:field="*{login}" th:required="required" />
@@ -82,6 +78,8 @@ margin-left: 200px;
 
                     <label class="col-sm-1 col-form-label">data de nascimento:</label>
                     <input class="input"ctype="text" th:field="*{data_nascimento}" th:required="required" />
+
+                        
 
                     
                     

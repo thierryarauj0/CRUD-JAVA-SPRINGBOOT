@@ -12,18 +12,46 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.edu.uerr.loja.modelo.Usuario;
+
 import br.edu.uerr.loja.repositorio.UsuarioRepositorio;
 
 @Controller
 public class LoginController{
+   
     @Autowired
     private UsuarioRepositorio usuarioRepositorio;
+
+  
 
      @GetMapping("/")
     public String exibirIndex(Usuario usuario) {
     return "index.html";
     }
+    @GetMapping("/cadastroUsuarioIndex")
+	public String abreFormUsuarioIndex(Model modelo) {
+		Usuario usuario = new Usuario();
+        
+		
+       
+        modelo.addAttribute("usuario", usuario);
+		return "formUsuario";
+		}
 
+   
+
+
+        @PostMapping("/salvarUsuarioIndex")
+        public String salvarIndex(@ModelAttribute("Usuario")Usuario usuario, Model modelo) {
+		
+            usuarioRepositorio.save(usuario);
+            
+            modelo.addAttribute("listaUsuarios", usuario.findAll());
+            return "redirect:/";
+
+
+        }
+
+        
     @PostMapping ("efetuarLogin")
     public String efetuarLogin(Usuario usuario,
         RedirectAttributes ra ,
@@ -41,6 +69,7 @@ public class LoginController{
                 ra.addFlashAttribute("mensagem","login e/ou senha inválidos");
                 return"redirect:/";
             }
+            
         }
         @PostMapping("/logout")
         public String logout(HttpSession session){
@@ -62,10 +91,14 @@ public String abreCliente (Model modelo){
     @GetMapping("/cadastroUsuario")
 	public String abreFormUsuario(Model modelo) {
 		Usuario usuario = new Usuario();
-		modelo.addAttribute("usuario", usuario);
-
+        
+		
+       	
+        modelo.addAttribute("usuario", usuario);
 		return "formUsuario";
 		}
+
+   
 
 
         @PostMapping("/salvarUsuario")
@@ -92,6 +125,9 @@ public String abreCliente (Model modelo){
 		return "redirect:/clientes";
 	}
 }
+
+
+
 
 
 

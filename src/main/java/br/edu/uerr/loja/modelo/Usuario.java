@@ -15,6 +15,7 @@ import javax.persistence.Table;
     @Entity
     @Table(name="usuario") 
     public class Usuario implements Serializable {
+        private static final long serialVersionUID = 1L;
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
    
@@ -24,15 +25,12 @@ import javax.persistence.Table;
    @Column (length = 50)
    private String senha;
    private String nome;
-   @Column(name="empresa_id")
-   private long empresaId;
-   public long getEmpresaId() {
-    return empresaId;
-}
-public void setEmpresaId(long empresaId) {
-    this.empresaId = empresaId;
-}
-private long nivel_de_acesso_id;
+  
+
+
+
+
+
    private String conta;
    private String telefone;
    private String email;
@@ -40,8 +38,7 @@ private long nivel_de_acesso_id;
    private String cpf;
    private String data_nascimento;
    
-
-
+  
 public long getId() {
     return id;
 }
@@ -66,18 +63,11 @@ public String getNome() {
 public void setNome(String nome) {
     this.nome = nome;
 }
-public long getEmpresa_id() {
-    return empresaId;
-}
-public void setEmpresa_id(long empresaId) {
-    this.empresaId = empresaId;
-}
-public long getNivel_de_acesso_id() {
-    return nivel_de_acesso_id;
-}
-public void setNivel_de_acesso_id(long nivel_de_acesso_id) {
-    this.nivel_de_acesso_id = nivel_de_acesso_id;
-}
+
+
+
+
+
 public String getConta() {
     return conta;
 }

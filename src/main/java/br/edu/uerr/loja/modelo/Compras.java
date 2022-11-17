@@ -1,8 +1,6 @@
     package br.edu.uerr.loja.modelo;
 
     import java.io.Serializable;
-    import java.text.DecimalFormat;
-
     import javax.persistence.Entity;
     import javax.persistence.GeneratedValue;
     import javax.persistence.GenerationType;
@@ -21,7 +19,7 @@
     private Integer cliente_id;
         private Integer produtos_id;
         private Integer quantidade;
-        private DecimalFormat valor_unitario;
+        private Integer valor_unitario;
         private Integer forma_pagamento;
         private Integer data_venda;
 
@@ -49,10 +47,10 @@
         public void setQuantidade(Integer quantidade) {
             this.quantidade = quantidade;
         }
-        public DecimalFormat getValor_unitario() {
+        public Integer getValor_unitario() {
             return valor_unitario;
         }
-        public void setValor_unitario(DecimalFormat valor_unitario) {
+        public void setValor_unitario(Integer valor_unitario) {
             this.valor_unitario = valor_unitario;
         }
         public Integer getForma_pagamento() {

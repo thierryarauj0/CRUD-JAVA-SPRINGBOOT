@@ -53,11 +53,11 @@
          </li>
          </ul>
          
-    <h1> <div style="text-align:center">clientes </div> </h1>
+    <h1> <div style="text-align:center">Usuarios </div> </h1>
     
     <div class="p-3 mb-2 bg-dark text-white">
     
-      <a href="cadastroUsuario">  <button class="btn btn-primary"> Novo Cliente</button></a>
+      <a href="cadastroUsuario">  <button class="btn btn-primary"> Novo Usuario</button></a>
       <a href="empresa">  <button class="btn btn-primary">Voltar Para Pagina Principal</button></a>
     </div>
     <table class="table table-dark" border ="1">
@@ -68,22 +68,23 @@
           <td>nome</td>
           <td>cpf</td>
           <td>rg</td>
-          <td>empresa</td>
+        
           <td>telefone</td>
           <td>email</td>
           <td>data de nascimento</td>
+        
        </tr>
-       <tr th:each="cli : ${listaUsuarios}">
-          <td th:text="${cli.id}"></td>
+       <tr th:each="emp : ${listaUsuarios}">
+          <td th:text="${emp.id}"></td>
          
-          <td th:text="${cli.login}"></td>
-          <td th:text="${cli.nome}"></td>
-          <td th:text="${cli.cpf}"></td>
-          <td th:text="${cli.rg}"></td>
-          <td th:text="${cli.empresa_id}"></td>
-          <td th:text="${cli.telefone}"></td>
-          <td th:text="${cli.email}"></td>
-          <td th:text="${cli.data_nascimento}"></td>
+          <td th:text="${emp.login}"></td>
+          <td th:text="${emp.nome}"></td>
+          <td th:text="${emp.cpf}"></td>
+          <td th:text="${emp.rg}"></td>
+          <td th:text="${emp.telefone}"></td>
+          <td th:text="${emp.email}"></td>
+          <td th:text="${emp.data_nascimento}"></td>
+        
           
         
        </tr>
