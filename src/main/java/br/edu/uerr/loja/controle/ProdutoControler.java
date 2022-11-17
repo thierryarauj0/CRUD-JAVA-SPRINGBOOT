@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -80,9 +80,40 @@ public class ProdutoControler {
 		return "redirect:produto";
 	}
 	//Deletar
+	@GetMapping("/deletarProdutos/{id}")
+	public String delProduto(@PathVariable("id") Integer id, Model modelo) {
+		
+		Produto produto = produtoRepositorio.findById(id)
+				.orElseThrow(()->new IllegalArgumentException("este produto nao existe "+id));
+		produtoRepositorio.delete(produto);
+				
+		modelo.addAttribute("listaFornecedor", fornecedorRepositorio.findAll());
+		modelo.addAttribute("listaEmpresas", empresaRepositorio.findAll());
+		return "redirect:/produto";
 
 
 
+
+
+}
+@GetMapping("/produtosComprados")
+public String produtoComprados(Model model) {
+		
+	model.addAttribute("listaProdutosComprados", produtoRepositorio.findAll());	
+	return "Compras";
+}
+
+@GetMapping("/comprarProdutos/{id}")
+	public String saveProduto(@PathVariable("id") Integer id, Model modelo) {
+		
+		Produto produto = produtoRepositorio.findById(id)
+				.orElseThrow(()->new IllegalArgumentException("este produto nao existe "+id));
+		produtoRepositorio.save(produto);
+				
+		modelo.addAttribute("listaProdutosComprados", produtosCompradosRepositorio.findAll());
+		modelo.addAttribute("listaProdutos", produtoRepositorio.findAll());
+		return "redirect:/Compras";
+}
 
 
 

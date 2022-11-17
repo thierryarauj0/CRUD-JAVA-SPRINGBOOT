@@ -32,9 +32,9 @@
        </style>
   <body>
     <div class="p-3 mb-2 bg-dark text-white">
-      <a href="cadastroProduto"> <button class="btn btn-primary">Adicionar Produto</button></a>
       <a href="empresa">  <button class="btn btn-primary">Voltar Para Pagina Principal</button></a>
-      <a href="produtosComprados">  <button class="btn btn-primary">Produtos Comprados</button></a>
+     
+
       <h1> <div style="text-align:center">Lista de Produtos</div> </h1>
       <ul class="center">
       
@@ -64,7 +64,7 @@
        </tr>
 
        
-       <tr th:each="emp : ${listaProdutos}">
+       <tr th:each="emp : ${listaProdutosComprados}">
           <td th:text="${emp.id}"></td>
           <td th:text="${emp.empresaId}"></td>   <!-- Nao consegui botar como Nome entao coloquei apenas o ID da empresa/produto-->
           <td th:text="${emp.fornecedorId}"></td> 
@@ -73,9 +73,8 @@
           <td th:text="${emp.quantidade}"></td>
           <td th:text="${emp.preco}">$</td>
 
-         <td> <a th:href="@{/deletarProdutos/{id}(id=${emp.id})}"><button class="btn btn-danger">Deletar</button></a>
-         </td>
-         <td> <a th:href="@{/comprarProdutos/{id}(id=${emp.id})}"><button class="btn btn-success">Comprar</button></a>
+       
+         
           
         
        </tr>
