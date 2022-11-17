@@ -34,7 +34,7 @@ public class LoginController{
 		
        
         modelo.addAttribute("usuario", usuario);
-		return "formUsuario";
+		return "formUsuarioIndex";
 		}
 
    
