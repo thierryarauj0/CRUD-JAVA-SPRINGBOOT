@@ -3,13 +3,9 @@
   <head>
    <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>   
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+   <meta http-equiv="refresh" content=1;url="localhost:8080/empresa">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
     <title>Loja Empresas</title>
   </head>
   <style>
@@ -33,48 +29,22 @@
     75%  {background: #24242c;}
     100% {background: #24242c;}
 }   
-
-.container {
+  </style>
+  <body>
+   <style>
+      .container {
         height: 300px;
         overflow-y: scroll;
       }
-
-    .title{
-
-      text-align: center;
-      }
-
-</style>
-
- 
+    </style>
    <div class="p-3 mb-2 bg-dark text-white">
-  
-         
-           
-    <ul class="center">
-      
-            <li >
-               
-            <form method="post" action="/logout">
-               <button class="btn btn-primary  "type="submit">
-                  <span th:text="${session.usuarioLogado.nome}"></span>
-                 
-                  <span class="	glyphicon glyphicon-log-out"></span> Sair
-               </button>
-               
-            </form>
-         </li>
-         </ul>
-         <h1> <div style="text-align:center">Empresas</div> </h1>
-         
-
-        
+    <h1> <div style="text-align:center">Empresas</div> </h1>
     <a href="cadastroEmpresa">  <button class="btn btn-primary"> Nova Empresa</button></a>
+    <a href="cadastroProduto"> <button class="btn btn-primary">Adicionar Produto</button></a>
     <a href="produto"> <button class="btn btn-primary">Produtos</button></a>
-    <a href="clientePessoaFisica"> <button class="btn btn-primary">Cliente Fisico</button></a>
-    <a href="clientePessoaJuridica"> <button class="btn btn-primary">Cliente Juridico</button></a>
-    <a href="clientes"> <button class="btn btn-primary">Usuarios</button></a>
-    
+    <a href="clientePessoaFisica"> <button class="btn btn-primary">Clientes</button></a>
+    <a href="compra"> <button class="btn btn-primary">Compras</button></a>
+    <a href="venda"> <button class="btn btn-primary">Vendas</button></a>
 
     <table class="table table-dark" border ="1">
        <tr>
@@ -101,7 +71,7 @@
 
           
        </tr>
-   
+    
   </body>
 </style>
 </div>
