@@ -38,7 +38,7 @@ public class VendaControle {
     public String salvar(@ModelAttribute("Venda") Venda venda, Model modelo) {
 
         vendaRepositorio.save(venda);
-
+         modelo.addAttribute("listaProdutos", produtoRepositorio.findAll());	
         modelo.addAttribute("listaVenda", vendaRepositorio.findAll());
         return "redirect:venda";
 

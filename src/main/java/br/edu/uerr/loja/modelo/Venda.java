@@ -22,7 +22,7 @@ import javax.persistence.Table;
 
         @Column(name="empresa_id")
 	    private Integer empresaId;
-       
+        @Column(name="produto_id")
         private Integer produtoId;
        
         @Column(name="usuario_id")
@@ -35,6 +35,17 @@ import javax.persistence.Table;
         
       
         private Calendar dataDeVenda;
+
+        private Integer quantidade;
+        
+        public Integer getQuantidade() {
+            return quantidade;
+        }
+
+
+        public void setQuantidade(Integer quantidade) {
+            this.quantidade = quantidade;
+        }
 
 
         public Integer getId() {
