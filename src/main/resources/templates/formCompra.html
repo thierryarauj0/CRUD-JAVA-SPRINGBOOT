@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sistema de Gestão de Frutas</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<style>
+	body {
+	 -webkit-animation: colorchange 60s infinite; 
+	 animation: colorchange 60s infinite;
+ }
+ @-webkit-keyframes colorchange {
+	  0%  {background: 
+ #24242c;}
+	 25%  {background: 
+ #24242c;}
+	 50%  {background: #24242c;}
+	 75%  {background: #24242c;}
+	 100% {background: #24242c;}
+ }
+ @keyframes colorchange {
+	  0%  {background: #24242c;}
+	 25%  {background: #24242c;}
+	 50%  {background: #24242c;}
+	 75%  {background: #24242c;}
+	 100% {background: #24242c;}
+ }   
+   </style>
+<body>
+	<div class="p-3 mb-2 bg-dark text-white">
+	<h1>Formulário de Compras</h1>
+	<form action="#" class="form form-control" th:action="@{/salvarCompra}" method="post" th:object="${compra}">
+		<fieldset>
+			<legend>Compra</legend>
+			
+			</select>
+			<label  class="col-sm-6 col-form-label">Fornecedor_id:</label>
+			<input type="number" th:field="*{fornecedor_id}" th:required="required" />
+		</select>
+			<label  class="col-sm-6 col-form-label">Produto id:</label>
+			<input type="number" th:field="*{produtos_id}" th:required="required" />
+						   
+			</select>
+			
+
+			<label  class="col-sm-1 col-form-label">Quantidade:</label>
+			<input type="number" th:field="*{quantidade}" th:required="required" />
+			
+			
+			
+			<button class="btn btn-primary" type="submit">Cadastrar</button>    
+		</fieldset>
+	</form>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+		crossorigin="anonymous"></script>
+	</div>
+</body>
+
+</html>

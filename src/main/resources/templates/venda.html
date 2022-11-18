@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <!-- CSS only -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <meta http-equiv="refresh" content=1;url="localhost:8080/empresa">
+         <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <title>Venda</title>
+       </head>
+       <style>
+        body {
+         -webkit-animation: colorchange 60s infinite; 
+         animation: colorchange 60s infinite;
+     }
+     @-webkit-keyframes colorchange {
+          0%  {background: 
+     #24242c;}
+         25%  {background: 
+     #24242c;}
+         50%  {background: #24242c;}
+         75%  {background: #24242c;}
+         100% {background: #24242c;}
+     }
+     @keyframes colorchange {
+          0%  {background: #24242c;}
+         25%  {background: #24242c;}
+         50%  {background: #24242c;}
+         75%  {background: #24242c;}
+         100% {background: #24242c;}
+     }   
+       </style>
+  <body>
+    <div class="p-3 mb-2 bg-dark text-white">
+      <a href="empresa">  <button class="btn btn-primary">Voltar Para Pagina Principal</button></a>
+     <a href="cadastroVenda">  <button class="btn btn-primary">Adicionar Compras</button></a>
+     
+
+      <h1> <div style="text-align:center">Lista de Vendas</div> </h1>
+      <ul class="center">
+      
+       
+     </ul>
+     
+        
+    <table class="table table-dark" border ="1">
+       <tr>
+          <td>Código da Venda</td>
+          <td>Código do Cliente</td>
+          <td>Código do Produto</td>
+          <td>Valor Unitario</td>
+          <td>Forma de pagamento</td>
+          <td>Data de Venda</td>
+          
+       </tr>
+
+       
+       <tr th:each="emp : ${listaProdutosComprados}">
+          <td th:text="${emp.id}"></td>
+          <td th:text="${emp.fornecedor_id}"></td>
+          <td th:text="${emp.produtos_id}"></td>
+          <td th:text="${emp.valor_unitario}"></td>
+          <td th:text="${emp.forma_pagamento}"></td>
+          <td th:text="${emp.data_de_venda}"></td>
+          
+         
+
+       
+         
+          
+        
+       </tr>
+    </table>
+  </body>
+</html>
