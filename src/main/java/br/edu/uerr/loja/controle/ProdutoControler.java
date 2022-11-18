@@ -103,17 +103,7 @@ public String produtoComprados(Model model) {
 	return "Compras";
 }
 
-@GetMapping("/comprarProdutos/{id}")
-	public String saveProduto(@PathVariable("id") Integer id, Model modelo) {
-		
-		Produto produto = produtoRepositorio.findById(id)
-				.orElseThrow(()->new IllegalArgumentException("este produto nao existe "+id));
-		produtosCompradosRepositorio.save(produto);
-				
-		modelo.addAttribute("listaProdutosComprados", produtosCompradosRepositorio.findAll());
 
-		return "redirect:/produtosComprados";
-}
 
 
 
