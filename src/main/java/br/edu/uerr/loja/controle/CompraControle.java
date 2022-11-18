@@ -28,7 +28,7 @@ public String compra (Model modelo){
 
     modelo.addAttribute("listaCompra", compraRepositorio.findAll());
     
-    return"compra";
+    return"Compras";
 
 }
 
