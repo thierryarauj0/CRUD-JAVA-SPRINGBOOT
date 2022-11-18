@@ -16,79 +16,95 @@ import javax.persistence.Table;
         private static final long serialVersionUID = 1L;
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+
         private Integer id;
 
         @Column(name="empresa_id")
-	private Integer empresaId;
-        public Integer getEmpresaId() {
-            return empresaId;
-        }
-        public void setEmpresaId(Integer empresaId) {
-            this.empresaId = empresaId;
-        }
-        public Integer getId() {
-            return id;
-        }
-        public void setId(Integer id) {
-            this.id = id;
-        }
-        private Integer cliente_id;
-        @Column(name="produto_id")
+	    private Integer empresaId;
+       
         private Integer produtoId;
-
+       
         @Column(name="usuario_id")
+    
         private Integer usuarioId;
 
-        public Integer getUsuarioId() {
-            return usuarioId;
-        }
-        public void setUsuarioId(Integer usuarioId) {
-            this.usuarioId = usuarioId;
-        }
-        private Integer quantidade;
-        
-        public Integer getQuantidade() {
-            return quantidade;
-        }
-        public void setQuantidade(Integer quantidade) {
-            this.quantidade = quantidade;
-        }
         private Integer valor_unitario;
         
         private String forma_pagamento;
         
-        public Integer getCliente_id() {
-            return cliente_id;
+      
+        private Calendar dataDeVenda;
+
+
+        public Integer getId() {
+            return id;
         }
-        public void setCliente_id(Integer cliente_id) {
-            this.cliente_id = cliente_id;
+
+
+        public void setId(Integer id) {
+            this.id = id;
         }
-        public Integer getProdutos_id() {
+
+
+        public Integer getEmpresaId() {
+            return empresaId;
+        }
+
+
+        public void setEmpresaId(Integer empresaId) {
+            this.empresaId = empresaId;
+        }
+
+
+        public Integer getProdutoId() {
             return produtoId;
         }
-        public void setProdutos_id(Integer produtoId) {
+
+
+        public void setProdutoId(Integer produtoId) {
             this.produtoId = produtoId;
         }
+
+
+        public Integer getUsuarioId() {
+            return usuarioId;
+        }
+
+
+        public void setUsuarioId(Integer usuarioId) {
+            this.usuarioId = usuarioId;
+        }
+
+
         public Integer getValor_unitario() {
             return valor_unitario;
         }
+
+
         public void setValor_unitario(Integer valor_unitario) {
             this.valor_unitario = valor_unitario;
         }
+
+
         public String getForma_pagamento() {
             return forma_pagamento;
         }
+
+
         public void setForma_pagamento(String forma_pagamento) {
             this.forma_pagamento = forma_pagamento;
         }
-        @Column (name="data_de_venda")
-        private Calendar dataDeVenda;
-        public Calendar getDataDeNascimento() {
+
+
+        public Calendar getDataDeVenda() {
             return dataDeVenda;
         }
-        public void setDataDeNascimento(Calendar dataDeNascimento) {
-            this.dataDeVenda = dataDeNascimento;
+
+
+        public void setDataDeVenda(Calendar dataDeVenda) {
+            this.dataDeVenda = dataDeVenda;
         }
-        
+   
        
 }
