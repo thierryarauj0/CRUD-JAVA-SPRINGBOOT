@@ -39,11 +39,24 @@
     </style>
    <div class="p-3 mb-2 bg-dark text-white">
     <h1> <div style="text-align:center">Empresas</div> </h1>
+    <li >
+           
+      <form method="post" action="/logout">
+         <button class="btn btn-primary  "type="submit">
+            <span th:text="${session.usuarioLogado.nome}"></span>
+           
+            <span class="	glyphicon glyphicon-log-out"></span> Sair
+         </button>
+         
+      </form>
+   </li>
     <a href="cadastroEmpresa">  <button class="btn btn-primary"> Nova Empresa</button></a>
     <a href="produto"> <button class="btn btn-primary">Produtos</button></a>
     <a href="clientePessoaFisica"> <button class="btn btn-primary">Clientes</button></a>
     <a href="compra"> <button class="btn btn-primary">Produtos Comprados</button></a>
     <a href="venda"> <button class="btn btn-primary">Comprar</button></a>
+    <a href="cadastroUsuarioIndex"> <button class="btn btn-primary">Não tem uma conta ? cadastre-se aqui </button></a>
+    
 
     <table class="table table-dark" border ="1">
        <tr>
